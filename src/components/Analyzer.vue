@@ -101,7 +101,7 @@ export default {
             this.selectedRelic = relic;
             console.log(relic.value)
         },
-
+        //drag and drop functions
         handleDragOver(event) {
             event.preventDefault();
         },
@@ -139,10 +139,10 @@ export default {
     created() {
         //console.log("retrieving relics")
         // Fetch artifact sets from Firestore
-        onSnapshot(collection(db, 'relics'), (QuerySnapshot) => {
+        onSnapshot(collection(db, 'HSR relics'), (QuerySnapshot) => {
             QuerySnapshot.forEach((doc) => {
                 //console.log(doc.data().name)
-                this.relicSets.push([doc.data().name, doc.data().icon, doc.data().relicIcons])
+                this.relicSets.push([doc.id, doc.data().icon, doc.data().relicIcons])
             })
         }) 
         //console.log(this.relicSets[0])
