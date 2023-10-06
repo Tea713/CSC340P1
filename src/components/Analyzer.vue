@@ -175,4 +175,7 @@ export default {
         height: 40px;
         width: 40px;
     }
+    .btn dropdown {
+        max-width: 100px;
+    }
 </style>
