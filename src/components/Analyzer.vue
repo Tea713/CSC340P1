@@ -6,14 +6,16 @@
                 <!--Img form-->
                 <form @submit.prevent="uploadImage" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="imageUpload"></label>
                         <input type="file" class="form-control-file" id="imageUpload" @change="previewImage" accept="image/*">
+                        <button type="button" class="btn btn-secondary">
+                            <label for="imageUpload">Select file</label>
+                        </button>
                     </div>
                     <button type="submit" class="btn btn-primary">Scan</button>
                 </form>
                 <!-- Dropdown for relic sets-->
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="relicSetDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle fixed-dropdown-btn" type="button" id="relicSetDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img v-if="selectedSet" :src=selectedSet[1] class="relicIcon">
                         {{ selectedSet ? selectedSet[0] : 'Select set' }}
                     </button>
@@ -25,7 +27,7 @@
                 </div>
                 <!-- Dropdown for specific relic-->
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="relicDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" :disabled="!selectedSet">
+                    <button class="btn btn-secondary dropdown-toggle fixed-dropdown-btn" type="button" id="relicDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" :disabled="!selectedSet">
                         <img v-if="selectedRelic" :src=selectedRelic[1] class="relicIcon">
                         {{ selectedRelic ? selectedRelic[0] : 'Select relic' }}
                     </button>
@@ -141,11 +143,11 @@ export default {
         // Fetch artifact sets from Firestore
         onSnapshot(collection(db, 'HSR relics'), (QuerySnapshot) => {
             QuerySnapshot.forEach((doc) => {
-                //console.log(doc.data().name)
+                console.log(doc.data().name)
                 this.relicSets.push([doc.id, doc.data().icon, doc.data().relicIcons])
             })
         }) 
-        //console.log(this.relicSets[0])
+        console.log(this.relicSets[0])
     },
 
     watch: {
@@ -172,10 +174,17 @@ export default {
         border: 1px solid #ccc;
     }
     .relicIcon {
-        height: 40px;
-        width: 40px;
+        height: 35px;
+        width: 35px;
     }
-    .btn dropdown {
-        max-width: 100px;
+    .fixed-dropdown-btn {
+        width: 240px; /* Adjust the width as needed */
+        height: 45px;
     }
+    .btn.dropdown-toggle {
+        font-size: 13px; /* Adjust the text size as needed */
+    }
+    #imageUpload {
+        display: none;
+      }
 </style>

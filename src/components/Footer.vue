@@ -1,6 +1,8 @@
 <template>
-    <p>Build: {{ currentDate() }}</p>
-    <p>By Thanh Nguyen</p>
+    <div class="p-3 mb-2 bg-dark text-white" style="height: 10vh;">
+        <p>Build: {{ currentDate() }}</p>
+        <p>By Thanh Nguyen</p>
+    </div>
 </template>
 
 <script>
@@ -16,11 +18,6 @@ export default {
 </script>
 
 <style>
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
     p {
         font-family: verdana;
         font-size: 10px;

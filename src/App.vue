@@ -1,7 +1,9 @@
 <template>
   <Navbar/>
-  <component :is="currentView" />
-  <Footer/>
+  <div class="p-3 mb-2 bg-dark text-white" style="height: auto;">
+    <component :is="currentView" />
+    <Footer/>
+  </div>
 </template>
 
 <script>
@@ -59,9 +61,9 @@ export default {
     font-size: 11px;
     margin-bottom: 500px;
   }
-  #center {
-    width: 700px;
-    margin: auto;
-    margin-bottom: 30px;
+  hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
   }
 </style>
