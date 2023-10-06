@@ -1,6 +1,5 @@
 <template>
   <div class="p-3 mb-2 bg-dark text-white" style="height: 85vh;">
-    <h1> HSR relicscan</h1>
     <div id="center">
       <p1>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id scelerisque eros. Maecenas eget ullamcorper erat. Sed dictum efficitur nunc, vel eleifend metus scelerisque et. Quisque velit ipsum, pellentesque vitae mattis nec, tempor nec nunc. Ut auctor, sapien nec porttitor imperdiet, nisi purus congue leo, vitae blandit turpis enim vel ligula. Phasellus maximus ante ipsum, vitae sollicitudin est suscipit ac. Mauris id neque egestas, placerat augue non, finibus ex. Suspendisse at euismod nisl, eu sodales tortor. Quisque dapibus in augue id accumsan. Vivamus ut tellus ut justo placerat congue nec quis tellus.
